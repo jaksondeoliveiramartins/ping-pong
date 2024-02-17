@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping-Pong</title>
+        <style>
+        * {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+       }
+        </style>
+    </head>
+    <body>
+        <canvas></canvas>
+        <script>
+            const canvasE1 = document.querySelector("canvas"), canvasCtx = canvasE1.getContext("2d")
+
+            const lineWidth = 15
+
+            function setup(){
+                canvasE1.width = canvasCtx.width = window.innerWidth
+                canvasE1.height = canvasCtx.height = window.innerHeight
+
+            }
+            function draw () {
+                canvasCtx.fillStyle = "#286047" // style tem que esta com "S" maiusculo
+                canvasCtx.fillRect(0, 0, window.innerWidth, window.innerHeight)
+
+                canvasCtx.fillStyle = "#ffffff"
+            
+
+                const x = window.innerWidth / 2 - lineWidth / 2
+                const y = 0
+                const w = lineWidth
+                const h = window.innerHeight
+
+                canvasCtx.fillRect(x, y, w, h)
+
+            }
+            setup()
+            draw()
+        </script>
+    </body>
+</html>
