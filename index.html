@@ -17,9 +17,10 @@
         <script>
             const canvasE1 = document.querySelector("canvas"), canvasCtx = canvasE1.getContext("2d")
 
-            const lineWidth = 15
-
-            function setup(){
+            const lineWidth = 15 // desenhando a linha central
+               
+                // Desenhando o campo 
+            function setup(){ 
                 canvasE1.width = canvasCtx.width = window.innerWidth
                 canvasE1.height = canvasCtx.height = window.innerHeight
 
@@ -28,6 +29,7 @@
                 canvasCtx.fillStyle = "#286047" // style tem que esta com "S" maiusculo
                 canvasCtx.fillRect(0, 0, window.innerWidth, window.innerHeight)
 
+                // Desenhando a linha central
                 canvasCtx.fillStyle = "#ffffff"
             
 
