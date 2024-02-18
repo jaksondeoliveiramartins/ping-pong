@@ -1,8 +1,8 @@
 # ping-pong
 
 # 1 -  Introdução.
-Instalando o vscode e o Live server.
-Testando e criando a estrutura.
+ ## Instalando o vscode e o Live server.
+ ## Testando e criando a estrutura.
 
 # 2 - Primeiros Desenhos. 
 # Vamos declarar a tag <canvas></canvas> no html em seguida  a tag <script></script> .
@@ -11,16 +11,16 @@ Testando e criando a estrutura.
 # Link da documentação canvas api
 <https://developer.mozilla.org/pt-BR/docs/Web/API/Canvas_API>
 
-Desenhando o campo.
-Desenhando a linha central
-Desenhando a Raquete.
-Desenhando as bolinhas.
-Desenhando o placar.
+## Desenhando o campo.
+## Desenhando a linha central
+## Desenhando a Raquete.
+## Desenhando as bolinhas.
+## Desenhando o placar.
 
 # 3 - Criando os objetos com programação.
-objeto campo.
-objeto line.
-objeto raquete.
+## objeto campo.
+## objeto line.
+## objeto raquete.
 
 
 
