@@ -21,6 +21,9 @@
 ## objeto campo.
 ## objeto line.
 ## objeto raquete.
+## objeto bolinha.
+## objeto placar.
+## Animações Básicas
 
 
 
