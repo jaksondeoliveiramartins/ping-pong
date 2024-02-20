@@ -18,6 +18,7 @@
             const canvasE1 = document.querySelector("canvas"), canvasCtx = canvasE1.getContext("2d"),
             gapx = 10
 
+            const mouse = { x: 0, y: 0}
             // objeto campo
             const field = {
                 w: window.innerWidth, // largura do campo-- this ta chamando aqui
@@ -50,10 +51,15 @@
                 y: 100,
                 w: line.w,
                 h: 200,
+                _move: function(){
+                    this.y = mouse.y - this.h / 2
+                },
                 draw:function(){
                     canvasCtx.fillStyle = "#ffffff"
                     canvasCtx.fillRect(this.x,this.y, this.w, this.h)
-                }
+
+                    this._move()
+                },
             }
 // desenho da raquete direita
             const  rightPaddle = {
@@ -61,21 +67,53 @@
                 y: 100,
                 w: line.w,
                 h: 200,
+                _move: function(){
+                    this.y = ball.y
+
+
+
+                },
                 draw:function(){
                     canvasCtx.fillStyle = "#ffffff"
                     canvasCtx.fillRect(this.x,this.y, this.w, this.h)
+
+                    this._move()
                 }
 
             }
 // desenho da bolinha
             const ball = { 
-                x:370,
-                y:120,
+                x:0,
+                y:0,
                 r:20,
                 speed: 5,
+                directionX: 1,
+                directionY: 1,
+                _calcPosition: function(){
+                    if(
+                        (this.y - this.r < 0 && this.directionY < 0) ||
+                    (this.y > field.h - this.r && this.directionY > 0)
+                    )   {
+                        this._reverseY()
+                    }
+                    
+                },
+                
+// rebatendo nas laterais do  campo
+                _reverseX: function(){
+                    // 1 * -1 = -1
+                    // -1 * -1 = 1
+                    this.directionX *= -1
+                },
+                _reverseY: function() {
+                    // 1 * -1 = -1
+                    // -1 * -1 = 1
+                    this.directionY *= -1
+
+                },
                 _move: function(){
-                    this.x +=1 * this.speed
-                    this.y +=1 * this.speed
+                    this.x += this.directionX * this.speed
+                    this.y += this.directionY * this.speed
 
                 },
                 draw:function (){
@@ -84,6 +122,7 @@
                     canvasCtx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false)
                     canvasCtx.fill()
 
+                    this._calcPosition()
                     this._move()
 
                 },
@@ -146,6 +185,12 @@
             setup()
             main()
             
+            canvasE1.addEventListener('mousemove', function(e){
+                mouse.x = e.pageX
+                mouse.y = e.pageY
+
+              
+            })
         </script>
     </body>
 </html>
