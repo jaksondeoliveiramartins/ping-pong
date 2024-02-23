@@ -26,6 +26,8 @@
 ## Animações Básicas
 ## Aplicando regras basicas.
 Rebatendo nas laterais do campo, Regra de ponto do jogador 1, Regra de ponto do jogador 2.
+## Incrementando o jogo.
+
   
 
 
