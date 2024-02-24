@@ -36,9 +36,7 @@ const leftPaddle = {
     h: 200,
     _move: function(){
         this.y = mouse.y - this.h / 2
-        if (window.innerWidth < 450) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        
     },
     draw:function(){
         canvasCtx.fillStyle = "#ffffff"
@@ -54,7 +52,7 @@ const  rightPaddle = {
     w: line.w,
     h: 200,
 // ajustando a fisica da raquete direita
-    speed: 4,
+    speed: 2,
     _move: function(){
         
         
@@ -66,7 +64,7 @@ const  rightPaddle = {
         this.y = ball.y
     },
     speedUp: function (){
-        this.speed += 2
+        this.speed += 1
     },
     draw:function(){
         canvasCtx.fillStyle = "#ffffff"
@@ -160,7 +158,7 @@ const ball = {
     },
     // aumentando  a  velocidade da bola
     _speedUp: function(){
-        this.speed += 6
+        this.speed += 5
     },
     
     _pointUp: function(){
@@ -235,6 +233,9 @@ main()
 canvasE1.addEventListener('mousemove', function(e){
     mouse.x = e.pageX
     mouse.y = e.pageY
+    if (window.innerWidth < 450) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-  
 })
+
