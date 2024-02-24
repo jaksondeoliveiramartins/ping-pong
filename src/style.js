@@ -233,9 +233,6 @@ main()
 canvasE1.addEventListener('mousemove', function(e){
     mouse.x = e.pageX
     mouse.y = e.pageY
-    if (window.innerWidth < 450) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
+    
 })
 
