@@ -36,6 +36,9 @@ const leftPaddle = {
     h: 200,
     _move: function(){
         this.y = mouse.y - this.h / 2
+        if (window.innerWidth < 450) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     },
     draw:function(){
         canvasCtx.fillStyle = "#ffffff"
@@ -54,9 +57,7 @@ const  rightPaddle = {
     speed: 4,
     _move: function(){
         
-        if (window.innerWidth < 450) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+        
         if (this.y + this.h / 2 < ball.y + ball.r){
             this.y += this.speed
         }else{
