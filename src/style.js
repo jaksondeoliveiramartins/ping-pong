@@ -53,6 +53,10 @@ const  rightPaddle = {
 // ajustando a fisica da raquete direita
     speed: 4,
     _move: function(){
+        
+        if (window.innerWidth < 450) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         if (this.y + this.h / 2 < ball.y + ball.r){
             this.y += this.speed
         }else{
